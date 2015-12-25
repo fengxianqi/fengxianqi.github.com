@@ -4,23 +4,32 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>关于工程学院毕业设计管理系统 | welcome to fengxianqi&#39;s blog</title>
+    <title>详解CSS中:nth-child的用法 | welcome to fengxianqi&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="fengxianqi">
     
 
     
-    <meta name="description" content="本系统的功能简介和记录">
+    <meta name="description" content="声明：本文转自：大前端 » 详解CSS中:nth-child的用法；仅作为自己学习笔记用。
+
+前端的哥们想必都接触过css中一个神奇的玩意，可以轻松选取你想要的标签并给与修改添加样式，是不是很给力，它就是“:nth-child”。下面我将用几个典型的实例来给大家讲解:nth-child的实际用途：
+Tips：还用低版本的IE浏览器的哥们请绕过！:nth-child(2)选取第几个标签，“2可以是你">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于工程学院毕业设计管理系统">
-<meta property="og:url" content="http://fengxianqi.github.io/2015/12/11/关于工程学院毕业设计管理系统/index.html">
+<meta property="og:title" content="详解CSS中:nth-child的用法">
+<meta property="og:url" content="http://fengxianqi.github.io/2015/12/25/详解CSS中-nth-child的用法/index.html">
 <meta property="og:site_name" content="welcome to fengxianqi's blog">
-<meta property="og:description" content="本系统的功能简介和记录">
-<meta property="og:updated_time" content="2015-12-21T10:09:24.622Z">
+<meta property="og:description" content="声明：本文转自：大前端 » 详解CSS中:nth-child的用法；仅作为自己学习笔记用。
+
+前端的哥们想必都接触过css中一个神奇的玩意，可以轻松选取你想要的标签并给与修改添加样式，是不是很给力，它就是“:nth-child”。下面我将用几个典型的实例来给大家讲解:nth-child的实际用途：
+Tips：还用低版本的IE浏览器的哥们请绕过！:nth-child(2)选取第几个标签，“2可以是你">
+<meta property="og:updated_time" content="2015-12-25T05:59:37.078Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于工程学院毕业设计管理系统">
-<meta name="twitter:description" content="本系统的功能简介和记录">
+<meta name="twitter:title" content="详解CSS中:nth-child的用法">
+<meta name="twitter:description" content="声明：本文转自：大前端 » 详解CSS中:nth-child的用法；仅作为自己学习笔记用。
+
+前端的哥们想必都接触过css中一个神奇的玩意，可以轻松选取你想要的标签并给与修改添加样式，是不是很给力，它就是“:nth-child”。下面我将用几个典型的实例来给大家讲解:nth-child的实际用途：
+Tips：还用低版本的IE浏览器的哥们请绕过！:nth-child(2)选取第几个标签，“2可以是你">
 
     
     
@@ -78,14 +87,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/12/11/关于工程学院毕业设计管理系统/" title="关于工程学院毕业设计管理系统" itemprop="url">关于工程学院毕业设计管理系统</a>
+      <a href="/2015/12/25/详解CSS中-nth-child的用法/" title="详解CSS中:nth-child的用法" itemprop="url">详解CSS中:nth-child的用法</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="fengxianqi" target="_blank" itemprop="author">fengxianqi</a>
 		
   <p class="article-time">
-    <time datetime="2015-12-11T06:58:17.000Z" itemprop="datePublished"> 发表于 2015-12-11</time>
+    <time datetime="2015-12-25T05:42:33.000Z" itemprop="datePublished"> 发表于 2015-12-25</time>
     
   </p>
 </header>
@@ -94,48 +103,31 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u5199_u5728_u524D_u9762"><span class="toc-number">1.</span> <span class="toc-text">写在前面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u6B22_u8FCE_u5EFA_u8BAE"><span class="toc-number">2.</span> <span class="toc-text">欢迎建议</span></a></li></ol>
+			
 		
 		</div>
 		
-		<p>本系统的功能简介和记录<br><a id="more"></a></p>
-<h2 id="u5199_u5728_u524D_u9762"><a href="#u5199_u5728_u524D_u9762" class="headerlink" title="写在前面"></a>写在前面</h2><p>我在系统里面留了个链接，可以直接进入我的个人博客，这个博客也是刚刚通过github建起来的，<br>对这个的一些操作也还有些生疏，平时也没写博的习惯，纯属当做是个人消遣，记录一下自己的学<br>习经历，玩玩哈。</p>
+		<p><strong>声明</strong>：<br>本文转自：大前端 » 详解CSS中:nth-child的用法；仅作为自己学习笔记用。</p>
 <hr>
-<p><strong>第一版完成时间2015-11-14，实现的功能：</strong></p>
-<ul>
-<li>学生：<pre><code>1. 根据管理员权限更新个人信息和修改密码；
-2. 根据权限选题、退选题目；
-3. 查看公告；
-4. 下载文档；
-5. 查看指导老师信息；
-6. 更新论文信息；
-7. 班长和学委补充权限：审核本班论文信息，录入本班论文成绩，导出本班论文目录；
-</code></pre></li>
-<li>教师：<pre><code>1. 根据管理员权限更新个人信息和修改密码；
-2. 根据权限发布论文题目，指定学生；
-3. 查看公告；
-4. 下载文档；
-5. 查看所有学生信息，可添加学生；
-6. 导出各班级论文目录和成绩登记表；
-7. 系主任补充权限：查看本系选题情况，发布本系公告，模糊查询论文；
-</code></pre></li>
-<li>管理员：<pre><code>1. 修改密码；
-2. 公告管理，增加和删除、显示对象；
-3. 提醒功能，必要时可弹窗提醒刚登陆进来的用户；
-4. 文档管理，添加和删除；
-5. 清空信息，清空学生信息，教师信息，课题，论文；
-6. 职称管理，根据职称设置教师发布题目上限；
-7. 学生管理，教师管理，增删改查，重置密码等；
-8. 权限管理，学生信息更新权限，教师发布课题权限，学生选题权限，论文更新权限，班委更新本班信息权限；
-9. 教师和学生信息导入；
-10. 查询选题信息（根据信息计数汇总），毕业论文目录，成绩登记表，教师工作量表，论文摘要，模糊查询，并可导出所有表；
-</code></pre></li>
-</ul>
-<h2 id="u6B22_u8FCE_u5EFA_u8BAE"><a href="#u6B22_u8FCE_u5EFA_u8BAE" class="headerlink" title="欢迎建议"></a>欢迎建议</h2><pre><code>系统可能还存在很多不足，如发现技术上的问题或者有什么好的建议，大家可以直接在系统中的传送
-门来发表，系统会以邮件的形势发送到我的邮箱（如果是信息错误等非技术性问题最好找系统管理员
-哈，系统管理员邮箱请看系统中的公告）。
-当然，大家也可以直接在这里评论留言，我看到会回复的。
-</code></pre>  
+<p>前端的哥们想必都接触过css中一个神奇的玩意，可以轻松选取你想要的标签并给与修改添加样式，是不是很给力，它就是“:nth-child”。<br>下面我将用几个典型的实例来给大家讲解:nth-child的实际用途：</p>
+<p>Tips：还用低版本的IE浏览器的哥们请绕过！<br><strong>:nth-child(2)选取第几个标签，“2可以是你想要的数字”</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.demo01 li:nth-child(<span class="number">2</span>)&#123;background:<span class="comment">#090&#125;</span></span><br></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>:nth-child(n+4)选取大于等于4标签，“n”表示从整数，下同</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.demo01 li:nth-child(n+<span class="number">4</span>)&#123;background:<span class="comment">#090&#125;</span></span><br></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>:nth-child(-n+4)选取小于等于4标签</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.demo01 li:nth-child(-n+<span class="number">4</span>)&#123;background:<span class="comment">#090&#125;</span></span><br></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>:nth-child(2n)选取偶数标签，2n也可以是even</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.demo01 li:nth-child(<span class="number">2</span>n)&#123;background:<span class="comment">#090&#125;</span></span><br></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>:nth-child(2n-1)选取奇数标签，2n-1可以是odd</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.demo01 li:nth-child(<span class="number">2</span>n-<span class="number">1</span>)&#123;background:<span class="comment">#090&#125;</span></span><br></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>:nth-child(3n+1)自定义选取标签，3n+1表示“隔二取一”</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.demo01 li:nth-child(<span class="number">3</span>n+<span class="number">1</span>)&#123;background:<span class="comment">#090&#125;</span></span><br></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>:last-child选取最后一个标签</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.demo01 li:last-child&#123;background:<span class="comment">#090&#125;</span></span><br></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>:nth-last-child(3)选取倒数第几个标签,3表示选取第3个</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.demo01 li:nth-last-child(<span class="number">3</span>)&#123;background:<span class="comment">#090&#125;</span></span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>ok，:nth-child的这些用法在实际中很用得着，不用单独给需要选取的标签加上ID或Class，是不是很拉轰！</p>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -148,7 +140,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/系统/">系统</a>
+  <span></span> <a href="/tags/css/">css</a>
   </div>
 
 </div>
@@ -157,7 +149,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://fengxianqi.github.io/2015/12/11/关于工程学院毕业设计管理系统/" data-title="关于工程学院毕业设计管理系统 | welcome to fengxianqi&#39;s blog" data-tsina="null" class="share clearfix">
+	  <div data-url="http://fengxianqi.github.io/2015/12/25/详解CSS中-nth-child的用法/" data-title="详解CSS中:nth-child的用法 | welcome to fengxianqi&#39;s blog" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -170,19 +162,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/12/25/详解CSS中-nth-child的用法/" title="详解CSS中:nth-child的用法">
-  <strong>上一篇：</strong><br/>
-  <span>
-  详解CSS中:nth-child的用法</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/12/09/My-first-blog/"  title="My first blog">
+<a href="/2015/12/11/关于工程学院毕业设计管理系统/"  title="关于工程学院毕业设计管理系统">
  <strong>下一篇：</strong><br/> 
- <span>My first blog
+ <span>关于工程学院毕业设计管理系统
 </span>
 </a>
 </div>
@@ -191,7 +175,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/12/11/关于工程学院毕业设计管理系统/" data-title="关于工程学院毕业设计管理系统" data-url="http://fengxianqi.github.io/2015/12/11/关于工程学院毕业设计管理系统/"></div>
+	<div class="ds-thread" data-thread-key="2015/12/25/详解CSS中-nth-child的用法/" data-title="详解CSS中:nth-child的用法" data-url="http://fengxianqi.github.io/2015/12/25/详解CSS中-nth-child的用法/"></div>
 </section>
 
 
@@ -201,7 +185,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u5199_u5728_u524D_u9762"><span class="toc-number">1.</span> <span class="toc-text">写在前面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u6B22_u8FCE_u5EFA_u8BAE"><span class="toc-number">2.</span> <span class="toc-text">欢迎建议</span></a></li></ol>
+ 
  
   </div>
 
