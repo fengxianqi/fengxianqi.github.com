@@ -102,7 +102,7 @@
 <hr>
 <p>在用asp.net做网站登录验证的时候，让网站或者系统后台必须登陆才能访问时，很多时候会用到forms认证，也有些人同时用session加一层验证。</p>
 <h1 id="Forms_u8BA4_u8BC1"><a href="#Forms_u8BA4_u8BC1" class="headerlink" title="Forms认证"></a>Forms认证</h1><ul>
-<li><p>forms认证，用的是cookie来进行验证，cookie是保存在客户端的，其安全性来说我也不是很清楚，都说cookie保存在客户端很容易被截取被改动，但我认为一般的人很难改<br>cookie，至少我搜了一晚上也没找到怎么伪造加密后的cookie来实现模仿登陆，可能我很菜不知道，求高人指点。所以我认为，在一般的网站中只用forms认证相对来说已经够用了。</p>
+<li><p>forms认证，用的是cookie来进行验证，cookie是保存在客户端的，其安全性来说我也不是很清楚，都说cookie保存在客户端很容易被截取被改动，但我认为一般的人很难截取<br>cookie，至少我搜了一晚上也没找到怎么截取后的cookie来实现模仿登陆，可能我很菜不知道，求高人指点。所以我认为，在一般的网站中只用forms认证相对来说已经够用了。</p>
 </li>
 <li><p>forms认证的配置也很简单，用mvc上的一个例子，只需要在Web.config中的<system.web>内加上配置节,如：</system.web></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;system.web&gt;</span><br><span class="line">&lt;authentication mode=<span class="string">"Forms"</span>&gt;</span><br><span class="line">	&lt;forms loginUrl=<span class="string">"~/Home/Login"</span> timeout=<span class="string">"60"</span>  /&gt;</span><br><span class="line">&lt;/authentication&gt;</span><br><span class="line">&lt;/system.web&gt;</span><br></pre></td></tr></table></figure>
@@ -133,19 +133,19 @@
 </li>
 </ul>
 <h1 id="Forms_u548CSession_u53CC_u8BA4_u8BC1"><a href="#Forms_u548CSession_u53CC_u8BA4_u8BC1" class="headerlink" title="Forms和Session双认证"></a>Forms和Session双认证</h1><ul>
-<li><p>在刚学到forms认证时候，也没有真正弄清楚forms认证和session认证是怎么回事，当时觉得反正大家都这样用，我也这样做，肯定就不会错了。所以，很多时候初学者就是session和Forms认证一起用，在pageload里面验证session是否为空，又用forms认证，其实这样做也挺好的，不过当时没有意识到用BasePage类，在每个页面都是复制粘贴代码，导致很乱，一直也没理清是怎么回事。</p>
+<li><p>在刚学到forms认证时候，也没有真正弄清楚forms认证和session认证是怎么回事，当时觉得反正大家都这样用，我也这样做，肯定就不会错了。所以，很多时候我们就是session和Forms认证一起用，在pageload里面验证session是否为空，又用forms认证，其实这样做也挺好的，不过当时没有意识到用BasePage类，在每个页面都是复制粘贴代码，导致很乱很难维护，一直也没理清是怎么回事。</p>
 </li>
 <li><p>在一般的项目中，同时用session和forms我认为是最安全的，一般也建议这样做。</p>
 </li>
 </ul>
 <h1 id="u603B_u7ED3"><a href="#u603B_u7ED3" class="headerlink" title="总结"></a>总结</h1><ul>
-<li><p>在我一般的建站中，用到session的时候一般是登陆的时候记录一下用户名，以便在用户操作时候记录这个用户的用户名。用session认证也只是顺便罢了。</p>
+<li><p>在我一般的建站中，用到session的时候一般是登陆的时候记录一下用户名，以便在用户操作时候记录这个用户的用户名。</p>
 </li>
-<li><p>我查了一下学校内的服务器，一般性能都很差，比如我学院的服务器内存只有2G，这对于一般的门户网站，如学院管网绰绰有余了。但是对于访问量比较大的系统来说，如学院的毕业生选题系统，如果没有很好减小服务器的负担，可能一下子几百人访问服务器就崩了。</p>
+<li><p>校内的服务器性能比较差，要把内存和带宽的利用做得很好，才能承受更大的访问量。用cookie会在每次访问页面时发送到服务器，影响到服务器带宽，而session则会消耗服务器内存。</p>
 </li>
-<li><p>所以，最后我认为，为了减少服务器负担，在服务器不给力和要满足一定的安全前提下，尽量少用session。比如我目前要做的毕业生选题系统，我用了forms认证，就没必要再用session了。当需要用到全局的用户名的时候，直接用cookie记录用户的身份（管理员、教师、学生）和当前访问人的用户名，调用cookie就好了。在校内一般很少有人能破了forms认证吧，而且选题这种没有什么攻击价值的事，也不会有人闲的蛋疼来搞你，如果真有这些大牛，那只能认栽了。</p>
+<li><p>所以，最后我认为，为了减少服务器负担，在服务器不给力和要满足一定的安全前提下，尽量少用session存储数据量较大的数据。我用了forms认证，就没必要再用session了。当需要用到全局的用户名的时候，直接用cookie记录用户的身份（管理员、教师、学生）和当前访问人的用户名，调用cookie就好了。</p>
 </li>
-<li><p>这只是个人学习中总结的经验，可能只适合小型校内网站，大型的网站肯定不会用这么简单的验证，如有理解错误的请指教。</p>
+<li><p></p>
 </li>
 <li><p>以上</p>
 </li>
